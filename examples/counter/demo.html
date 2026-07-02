@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BundleHive — Counter (built embed)</title>
+
+    <!--
+      The embed script lives in <head> with `async`, exactly like the target:
+
+        <script src="https://unpkg.com/@usereq/widget" async></script>
+
+      This runs BEFORE <body> is parsed. It still works because registering a
+      custom element is order-independent: when the parser later reaches
+      <bh-counter>, the browser upgrades it in place and runs its mount logic.
+      (Once published, ./dist/embed.js becomes https://unpkg.com/<your-package>.)
+    -->
+    <script src="./dist/embed.js" async></script>
+
+    <style>
+      body {
+        font-family: Georgia, serif;
+        background: #fafaf9;
+        padding: 2rem;
+      }
+      button {
+        background: red !important;
+        color: yellow !important;
+        border: 4px dashed green !important;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Counter — built embed bundle (script in &lt;head async&gt;)</h1>
+    <p>This is the single-element + async-script pattern a customer pastes:</p>
+
+    <bh-counter start="10" label="Stars" accent-color="#e11d48"></bh-counter>
+
+    <p style="margin-top: 2rem">
+      A host-page button for contrast (red, ugly — proves isolation):
+    </p>
+    <button>host button</button>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BundleHive — Counter (dev)</title>
+    <style>
+      /* Deliberately hostile host-page CSS: if the widget were not isolated,
+         these would wreck it. Shadow DOM should keep them out. */
+      body {
+        font-family: Georgia, serif;
+        background: #fafaf9;
+        padding: 2rem;
+      }
+      button {
+        background: red !important;
+        color: yellow !important;
+        font-size: 40px !important;
+        border: 4px dashed green !important;
+      }
+      * {
+        letter-spacing: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Counter widget — dev playground</h1>
+    <p>The page CSS tries to break every button. The widget should be immune.</p>
+
+    <bh-counter start="5" label="Likes"></bh-counter>
+
+    <p style="margin-top: 2rem">A host-page button for contrast:</p>
+    <button>I am a host button (red, ugly — as intended)</button>
+
+    <script type="module" src="/src/embed.ts"></script>
+  </body>
+</html>

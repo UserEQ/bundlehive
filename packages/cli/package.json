@@ -1,0 +1,25 @@
+{
+  "name": "@bundlehive/cli",
+  "version": "0.0.0",
+  "description": "The `bundlehive` CLI — dev server and build for embeddable widgets.",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "bundlehive": "./src/cli.ts"
+  },
+  "files": ["src"],
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@bundlehive/build": "workspace:*",
+    "vite": "^8.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.9.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

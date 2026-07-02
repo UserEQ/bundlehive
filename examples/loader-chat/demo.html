@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BundleHive — Command-queue loader</title>
+
+    <!-- 1) The inline stub: defines acmechat() to QUEUE calls until the
+            real bundle loads. This is what a customer pastes. -->
+    <script>
+      (function (w) {
+        w.acmechat =
+          w.acmechat ||
+          function () {
+            (w.acmechat.q = w.acmechat.q || []).push(arguments);
+          };
+      })(window);
+
+      // 2) Configure + open IMMEDIATELY — before the async bundle has loaded.
+      //    These calls are buffered, then replayed once it arrives.
+      acmechat("init", {
+        title: "Acme Support",
+        primaryColor: "#e11d48",
+        user: { name: "Duy" },
+      });
+      acmechat("open");
+    </script>
+
+    <!-- 3) The async bundle. It installs the real acmechat() and drains the queue. -->
+    <script src="./dist/embed.js" async></script>
+
+    <style>
+      body { font-family: Georgia, serif; padding: 2rem; background: #fafaf9; }
+    </style>
+  </head>
+  <body>
+    <h1>Command-queue loader demo</h1>
+    <p>
+      No widget tag in this HTML. The launcher's config and its initial open
+      state were <em>queued before the script loaded</em>. The button below
+      drives the live instance imperatively after load.
+    </p>
+    <button onclick="acmechat('toggle')">Toggle launcher from the host page</button>
+  </body>
+</html>

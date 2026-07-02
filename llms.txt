@@ -1,0 +1,78 @@
+# BundleHive
+
+> A framework for building standalone, embeddable React components. Write a React
+> component; get a self-contained bundle that mounts onto any website as a
+> Shadow-DOM custom element with isolated CSS (Tailwind v4 included). Client-render
+> only — no SSR, no routing. It is a bundler + thin runtime, not a meta-framework.
+
+BundleHive produces the standard third-party embed: a custom element plus an async
+CDN script (`<my-widget></my-widget>` + `<script src="…/embed.js" async>`). Authors
+write plain React; the framework owns Shadow-DOM mounting, CSS isolation, the Vite
+build, and runtime config.
+
+## Quickstart
+
+A widget package needs five files, then `bundlehive build`:
+
+1. `package.json` — deps `@bundlehive/react` + react/react-dom; dev `@bundlehive/cli`
+   + tailwindcss; scripts `"dev": "bundlehive dev"`, `"build": "bundlehive build --name X"`;
+   CDN fields `unpkg`/`jsdelivr`/`browser`/`main` → `./dist/embed.js`.
+2. `tsconfig.json` — `"jsx": "react-jsx"`, `lib` includes `DOM`.
+3. `src/styles.css` — `@import "tailwindcss";`
+4. `src/vite-env.d.ts` — `declare module "*.css?inline" { const css: string; export default css; }`
+5. `src/widget.tsx` (the React component) + `src/embed.ts` (calls `defineWidget`).
+
+```ts
+// src/embed.ts — importing this registers the element
+import { defineWidget } from "@bundlehive/react";
+import styles from "./styles.css?inline";
+import { Widget } from "./widget";
+export default defineWidget(Widget, { tag: "acme-widget", styles, observedAttributes: ["title"] });
+```
+
+```html
+<!-- what a customer pastes -->
+<acme-widget title="Hi"></acme-widget>
+<script src="https://unpkg.com/@acme/widget" async></script>
+```
+
+## API surface (`@bundlehive/react`)
+
+- `defineWidget(Component, { tag, styles, observedAttributes, parseConfig, strictMode, autoMount })` → `{ tag, elementClass, mount }`
+- `useWidget<Config>()` → `{ config, element, shadowRoot }` (re-renders on config change)
+- `useWidgetCommands(cmd => …)` — imperative commands (`open`/`close`/…) from the loader
+- `<Portal>` — shadow-root-scoped overlays (dialogs/popovers); plain `createPortal` drops events across shadow boundaries
+- `createLoader(name, definition, { target? })` — install a command-queue global
+- `onDomReady(fn)` — DOM-ready guard
+- CLI `bundlehive dev|build` — flags `--name --entry --external --outDir --port`
+- `@bundlehive/build` `widgetBuildConfig(opts)` — the Vite preset, if you prefer a `vite.config.ts`
+
+## Three embed modes
+
+- **Placed element** — customer drops a tag + script; config via string attributes.
+- **Auto-inject** — `autoMount: true`; customer pastes only the script; the widget injects itself (floating launcher).
+- **Command-queue loader** — `createLoader(...)`; customer pastes an inline stub + script and calls a JS API (rich config + `open`/`close`) even before the bundle loads (Intercom/Segment pattern).
+
+## Critical gotchas
+
+- **Tailwind v4 in shadow DOM is auto-fixed** by the runtime (it hoists `@property`
+  rules and rewrites `:root`→`:host`). Just `@import "tailwindcss"` and import it
+  `?inline`. Never inject a global Tailwind `<link>` — it leaks into the host page.
+- **Vite 8 is rolldown/oxc-based** — never set `esbuild: {}` or `minify: 'esbuild'`;
+  it forces the deprecated esbuild path and fails. JSX comes from tsconfig.
+- **Config is runtime, not build-time** — pass via attributes / loader so one bundle
+  serves every tenant and environment.
+- **Custom-element tags need a hyphen** (`acme-widget`, not `widget`).
+- **Import widget CSS with `?inline`** — a bare CSS import injects into the document, not the shadow root.
+- **Shadow DOM isolates CSS, not JS** — not a security boundary; no secrets in the bundle.
+- **No SSR** — client render only, by design.
+
+## Docs and source
+
+- Agent skill (step-by-step authoring): `.claude/skills/bundlehive-widget/SKILL.md`
+- Full API reference: `.claude/skills/bundlehive-widget/references/api.md`
+- Embed modes with examples: `.claude/skills/bundlehive-widget/references/embed-modes.md`
+- Publishing to npm/CDN: `.claude/skills/bundlehive-widget/references/publishing.md`
+- Design/scope/roadmap: `docs/PLAN.md`
+- Runtime source: `packages/react/src/` (`define-widget.tsx`, `css-isolation.ts`, `loader.ts`)
+- Working examples: `examples/counter`, `examples/floating-badge`, `examples/loader-chat`

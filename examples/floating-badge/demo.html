@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BundleHive — Floating launcher (auto-inject)</title>
+
+    <!-- The ONLY thing the customer adds — no element to place. The script
+         is in <head> with async, runs before <body>, and the launcher still
+         appears because autoMount waits for the DOM to be ready. -->
+    <script src="./dist/embed.js" async></script>
+
+    <style>
+      body { font-family: Georgia, serif; padding: 2rem; background: #fafaf9; }
+    </style>
+  </head>
+  <body>
+    <h1>A normal page</h1>
+    <p>
+      There is no widget tag anywhere in this HTML. The floating launcher in the
+      bottom-right corner was injected entirely by the embed script.
+    </p>
+  </body>
+</html>
