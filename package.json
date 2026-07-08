@@ -10,9 +10,13 @@
   "scripts": {
     "build": "bun --filter './packages/*' build",
     "build:examples": "bun --filter './examples/*' build",
-    "typecheck": "bun --filter '*' typecheck"
+    "typecheck": "bun --filter '*' typecheck",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "changeset publish"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.31.0",
     "tsup": "^8.5.0"
   }
 }

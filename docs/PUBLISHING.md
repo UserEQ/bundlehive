@@ -27,13 +27,16 @@ Packages (see the last section), but treat npm as the source of truth.
 
 ## Prerequisites
 
-> ✅ **The build step is now implemented.** All three packages build with `tsup`
+> ✅ **Build step + Changesets are set up.** All three packages build with `tsup`
 > (`bun run build` → `dist/*.js` + `.d.ts`), `main`/`module`/`types`/`exports`/`files`
-> point at `dist`, the CLI bin is `dist/cli.js` with a Node shebang, and versions
-> are `0.1.0`. `npm pack --dry-run` ships `dist` only (no `src`). What remains before
-> a first publish: the `@usereq` npm scope (already owned — same scope as
-> `@usereq/widget`) + an `NPM_TOKEN` secret scoped to it, and run
-> `bunx changeset init`. The subsections below document how that build step is set up.
+> point at `dist`, the CLI bin is `dist/cli.js` with a Node shebang, versions
+> are `0.1.0`, and `npm pack --dry-run` ships `dist` only (no `src`). Changesets is
+> initialized (`.changeset/config.json` — `access: public`, the three framework
+> packages `fixed` to one version, examples ignored) and the root `changeset` /
+> `version` / `release` scripts exist. **The only thing left is an account step:**
+> the `@usereq` npm scope (already owned — same scope as `@usereq/widget`) needs an
+> **`NPM_TOKEN`** automation token added as a repo secret. The subsections below
+> document how this is wired up.
 
 ### 1. Add a build to each package (`tsup`)
 
@@ -116,40 +119,43 @@ workspace without one of these.
 monorepo npm releases: contributors describe changes, it computes versions +
 changelogs, opens a "Version Packages" PR, and publishes on merge.
 
-### Setup (once)
+### Setup — ✅ already done
 
-```bash
-bunx changeset init
-```
-
-Edit `.changeset/config.json` — set `"access": "public"` and, if the three
-packages should always share a version, add them to `fixed`:
+`bunx changeset init` has been run and `.changeset/config.json` configured:
 
 ```jsonc
 {
   "access": "public",
   "baseBranch": "main",
-  "fixed": [["@usereq/bundlehive", "@usereq/bundlehive-build", "@usereq/bundlehive-cli"]]
+  // the three framework packages always share one version:
+  "fixed": [["@usereq/bundlehive", "@usereq/bundlehive-build", "@usereq/bundlehive-cli"]],
+  // private examples never version/publish:
+  "ignore": [
+    "@usereq/bundlehive-example-counter",
+    "@usereq/bundlehive-example-floating-badge",
+    "@usereq/bundlehive-example-loader-chat"
+  ]
 }
 ```
 
-Add root scripts:
+Root scripts `changeset` / `version` (`changeset version`) / `release`
+(`changeset publish`) are in `package.json`, and `@changesets/cli` is a dev
+dependency.
 
-```jsonc
-{
-  "scripts": {
-    "build": "bun --filter './packages/*' build",
-    "version": "changeset version",
-    "release": "changeset publish"
-  }
-}
-```
+### First release (0.1.0)
 
-### Day-to-day
+The packages are at `0.1.0` and there are **no pending changesets**. When this
+lands on `main` with `NPM_TOKEN` set, `changesets/action` sees nothing to version
+and runs `publish` directly — shipping `0.1.0` to npm as-is. (No initial
+changeset is needed; changesets publishes any package whose version isn't yet on
+the registry.)
 
-For each change that should ship, run `bunx changeset`, pick the packages and
-bump type (patch/minor/major), and commit the generated markdown file. That's it
-— the workflow does the rest when it lands on `main`.
+### Day-to-day (every change after 0.1.0)
+
+For each change that should ship, run `bun run changeset`, pick the bump type
+(patch/minor/major — one entry covers all three since they're `fixed`), and
+commit the generated markdown file. On `main`, the workflow opens a "Version
+Packages" PR; merging it publishes the bumped version.
 
 ### The workflow
 
@@ -185,14 +191,16 @@ changelogs by hand. Fine to start; migrate to Changesets when contributors arriv
 
 ## First release checklist
 
-1. Prerequisites done (build step, dist fields, CLI node shebang).
+1. ✅ Prerequisites done (build step, dist fields, CLI node shebang, Changesets
+   config).
 2. `bun run build` produces `dist/` in all three packages; `dist/cli.js` starts
    with `#!/usr/bin/env node`.
 3. Smoke-test a pack: `cd packages/react && npm pack --dry-run` → confirm only
    `dist/`, `package.json`, `README.md` are included (no `src`).
 4. `@usereq` scope publish access confirmed; `NPM_TOKEN` secret set.
-5. Changesets initialized; a changeset committed.
-6. Merge the "Version Packages" PR → workflow publishes.
+5. Push to `main` → with no pending changesets the workflow publishes `0.1.0`
+   directly. (For later releases: `bun run changeset` → merge the "Version
+   Packages" PR → workflow publishes the bump.)
 7. Verify: `npm view @usereq/bundlehive`, and the CDN URL
    `https://unpkg.com/@usereq/bundlehive` resolves.
 
