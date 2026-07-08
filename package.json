@@ -8,7 +8,11 @@
     "examples/*"
   ],
   "scripts": {
-    "build:example": "bun --filter '@bundlehive/example-counter' build",
+    "build": "bun --filter './packages/*' build",
+    "build:examples": "bun --filter './examples/*' build",
     "typecheck": "bun --filter '*' typecheck"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.0"
   }
 }

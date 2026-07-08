@@ -1,6 +1,6 @@
 # BundleHive API reference
 
-Everything exported from `@bundlehive/react`, plus the CLI and build preset.
+Everything exported from `@usereq/bundlehive`, plus the CLI and build preset.
 
 ## Table of contents
 - [`defineWidget`](#definewidget)
@@ -10,8 +10,8 @@ Everything exported from `@bundlehive/react`, plus the CLI and build preset.
 - [`createLoader`](#createloader)
 - [`onDomReady`](#ondomready)
 - [`transformShadowCss` / `adoptWidgetStyles`](#css-internals)
-- [CLI (`@bundlehive/cli`)](#cli)
-- [Build preset (`@bundlehive/build`)](#build-preset)
+- [CLI (`@usereq/bundlehive-cli`)](#cli)
+- [Build preset (`@usereq/bundlehive-build`)](#build-preset)
 
 ---
 
@@ -151,7 +151,7 @@ these directly.
 
 ## CLI
 
-`@bundlehive/cli` provides the `bundlehive` binary:
+`@usereq/bundlehive-cli` provides the `bundlehive` binary:
 
 ```
 bundlehive dev     Start the Vite dev server / HMR playground (serves index.html)
@@ -173,12 +173,12 @@ No `vite.config.ts` needed — the CLI applies the build preset internally
 
 ## Build preset
 
-`@bundlehive/build` exposes the Vite config the CLI uses, for anyone who wants a
+`@usereq/bundlehive-build` exposes the Vite config the CLI uses, for anyone who wants a
 `vite.config.ts` instead of the CLI:
 
 ```ts
 import { defineConfig } from "vite";
-import { widgetBuildConfig } from "@bundlehive/build";
+import { widgetBuildConfig } from "@usereq/bundlehive-build";
 
 export default defineConfig(widgetBuildConfig({ name: "AcmeWidget" }));
 

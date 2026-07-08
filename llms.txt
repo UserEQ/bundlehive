@@ -14,7 +14,7 @@ build, and runtime config.
 
 A widget package needs five files, then `bundlehive build`:
 
-1. `package.json` — deps `@bundlehive/react` + react/react-dom; dev `@bundlehive/cli`
+1. `package.json` — deps `@usereq/bundlehive` + react/react-dom; dev `@usereq/bundlehive-cli`
    + tailwindcss; scripts `"dev": "bundlehive dev"`, `"build": "bundlehive build --name X"`;
    CDN fields `unpkg`/`jsdelivr`/`browser`/`main` → `./dist/embed.js`.
 2. `tsconfig.json` — `"jsx": "react-jsx"`, `lib` includes `DOM`.
@@ -24,7 +24,7 @@ A widget package needs five files, then `bundlehive build`:
 
 ```ts
 // src/embed.ts — importing this registers the element
-import { defineWidget } from "@bundlehive/react";
+import { defineWidget } from "@usereq/bundlehive";
 import styles from "./styles.css?inline";
 import { Widget } from "./widget";
 export default defineWidget(Widget, { tag: "acme-widget", styles, observedAttributes: ["title"] });
@@ -36,7 +36,7 @@ export default defineWidget(Widget, { tag: "acme-widget", styles, observedAttrib
 <script src="https://unpkg.com/@acme/widget" async></script>
 ```
 
-## API surface (`@bundlehive/react`)
+## API surface (`@usereq/bundlehive`)
 
 - `defineWidget(Component, { tag, styles, observedAttributes, parseConfig, strictMode, autoMount })` → `{ tag, elementClass, mount }`
 - `useWidget<Config>()` → `{ config, element, shadowRoot }` (re-renders on config change)
@@ -45,7 +45,7 @@ export default defineWidget(Widget, { tag: "acme-widget", styles, observedAttrib
 - `createLoader(name, definition, { target? })` — install a command-queue global
 - `onDomReady(fn)` — DOM-ready guard
 - CLI `bundlehive dev|build` — flags `--name --entry --external --outDir --port`
-- `@bundlehive/build` `widgetBuildConfig(opts)` — the Vite preset, if you prefer a `vite.config.ts`
+- `@usereq/bundlehive-build` `widgetBuildConfig(opts)` — the Vite preset, if you prefer a `vite.config.ts`
 
 ## Three embed modes
 

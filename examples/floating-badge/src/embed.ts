@@ -1,4 +1,4 @@
-import { defineWidget } from "@bundlehive/react";
+import { defineWidget } from "@usereq/bundlehive";
 import styles from "./styles.css?inline";
 import { FloatingBadge, type BadgeConfig } from "./widget";
 

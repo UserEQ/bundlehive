@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Portal, useWidget } from "@bundlehive/react";
+import { Portal, useWidget } from "@usereq/bundlehive";
 
 export interface CounterConfig {
   /** Initial count (from the `start` attribute). */

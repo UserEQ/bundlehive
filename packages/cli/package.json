@@ -1,18 +1,20 @@
 {
-  "name": "@bundlehive/cli",
-  "version": "0.0.0",
+  "name": "@usereq/bundlehive-cli",
+  "version": "0.1.0",
   "description": "The `bundlehive` CLI — dev server and build for embeddable widgets.",
   "type": "module",
   "license": "MIT",
   "bin": {
-    "bundlehive": "./src/cli.ts"
+    "bundlehive": "./dist/cli.js"
   },
-  "files": ["src"],
+  "files": ["dist"],
   "scripts": {
+    "build": "tsup",
+    "prepublishOnly": "tsup",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@bundlehive/build": "workspace:*",
+    "@usereq/bundlehive-build": "workspace:*",
     "vite": "^8.0.3"
   },
   "devDependencies": {

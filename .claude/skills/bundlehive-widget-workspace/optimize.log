@@ -1,0 +1,1544 @@
+Split: 12 train, 8 test (holdout=0.4)
+
+============================================================
+Iteration 1/5
+Description: Build a standalone, embeddable widget with BundleHive — a React component that ships as a self-contained <script> bundle and mounts onto any website inside an isolated Shadow DOM (Tailwind included). Use this whenever the user wants to create, scaffold, or build an embeddable widget, a third-party embed, a "drop-in <script>" component, a chat/support/booking/feedback launcher, a shadow-DOM web component, a CDN/unpkg widget, or anything a customer pastes onto their own site — even if they don't say "BundleHive" by name. Also use when working inside a BundleHive repo (files named embed.ts, defineWidget, or bundlehive.config), or when adding runtime config, a floating launcher, or a command-queue loader to an embeddable component.
+============================================================
+Train: 18/36 correct, precision=100% recall=0% accuracy=50% (63.3s)
+  [FAIL] rate=0/3 expected=True: we already have a widget in examples/ using defineWidget and
+  [FAIL] rate=0/3 expected=True: build a newsletter signup box that any blog can embed, with 
+  [FAIL] rate=0/3 expected=True: i want customers to call something like widget('open') and p
+  [FAIL] rate=0/3 expected=True: my tailwind v4 classes render completely unstyled inside the
+  [FAIL] rate=0/3 expected=True: i'm building a customer support chat bubble that our users c
+  [FAIL] rate=0/3 expected=True: need to make an embeddable pricing table in react that other
+  [PASS] rate=0/3 expected=False: set up github actions to publish my node cli tool to npm on 
+  [PASS] rate=0/3 expected=False: i need a reusable Button and Card component for our design s
+  [PASS] rate=0/3 expected=False: my react component's tailwind colors aren't applying, i thin
+  [PASS] rate=0/3 expected=False: set up a bun workspaces monorepo with shared tsconfig for ou
+  [PASS] rate=0/3 expected=False: i want to add a live chat panel to the dashboard page of my 
+  [PASS] rate=0/3 expected=False: build me a dashboard in next.js to show our internal sales m
+Test : 12/24 correct, precision=100% recall=0% accuracy=50% (0.0s)
+  [FAIL] rate=0/3 expected=True: turn this react component into something i can embed on a cu
+  [FAIL] rate=0/3 expected=True: how do i build a drop-in reviews widget that i publish to np
+  [FAIL] rate=0/3 expected=True: scaffold a feedback button that sites paste onto their page 
+  [FAIL] rate=0/3 expected=True: add a floating launcher mode so people just paste the script
+  [PASS] rate=0/3 expected=False: our next.js marketing site needs server-side rendering on th
+  [PASS] rate=0/3 expected=False: how do i embed a youtube video and an iframe of our booking 
+  [PASS] rate=0/3 expected=False: create a chrome extension that injects a summarize button in
+  [PASS] rate=0/3 expected=False: help me install and configure the Intercom messenger on our 
+
+Improving description...
+Proposed (20.2s): Use this skill to build a UI widget that runs on *other people's* websites — a component someone else drops onto their page with a `<script>` tag, embeds via a snippet, or loads from a CDN. Reach for it whenever the goal is a third-party embed: a support/chat bubble, booking or feedback launcher, newsletter signup, pricing table, reviews or comment box that customers paste onto their own sites and configure with data attributes, an API key, or JS commands. Also use for any React component that must render inside a Shadow DOM to isolate it from the host page's CSS (including Tailwind-not-styling-inside-shadow-root problems), or when editing an existing embed project (files like embed.ts, defineWidget, bundlehive.config). Skip it for your own app's pages, routes, or dashboards, and for internal component libraries you publish to npm.
+
+============================================================
+Iteration 2/5
+Description: Use this skill to build a UI widget that runs on *other people's* websites — a component someone else drops onto their page with a `<script>` tag, embeds via a snippet, or loads from a CDN. Reach for it whenever the goal is a third-party embed: a support/chat bubble, booking or feedback launcher, newsletter signup, pricing table, reviews or comment box that customers paste onto their own sites and configure with data attributes, an API key, or JS commands. Also use for any React component that must render inside a Shadow DOM to isolate it from the host page's CSS (including Tailwind-not-styling-inside-shadow-root problems), or when editing an existing embed project (files like embed.ts, defineWidget, bundlehive.config). Skip it for your own app's pages, routes, or dashboards, and for internal component libraries you publish to npm.
+============================================================
+Train: 18/36 correct, precision=100% recall=0% accuracy=50% (66.1s)
+  [FAIL] rate=0/3 expected=True: i want customers to call something like widget('open') and p
+  [FAIL] rate=0/3 expected=True: we already have a widget in examples/ using defineWidget and
+  [FAIL] rate=0/3 expected=True: build a newsletter signup box that any blog can embed, with 
+  [FAIL] rate=0/3 expected=True: my tailwind v4 classes render completely unstyled inside the
+  [FAIL] rate=0/3 expected=True: i'm building a customer support chat bubble that our users c
+  [FAIL] rate=0/3 expected=True: need to make an embeddable pricing table in react that other
+  [PASS] rate=0/3 expected=False: i need a reusable Button and Card component for our design s
+  [PASS] rate=0/3 expected=False: set up github actions to publish my node cli tool to npm on 
+  [PASS] rate=0/3 expected=False: my react component's tailwind colors aren't applying, i thin
+  [PASS] rate=0/3 expected=False: set up a bun workspaces monorepo with shared tsconfig for ou
+  [PASS] rate=0/3 expected=False: i want to add a live chat panel to the dashboard page of my 
+  [PASS] rate=0/3 expected=False: build me a dashboard in next.js to show our internal sales m
+Test : 12/24 correct, precision=100% recall=0% accuracy=50% (0.0s)
+  [FAIL] rate=0/3 expected=True: turn this react component into something i can embed on a cu
+  [FAIL] rate=0/3 expected=True: how do i build a drop-in reviews widget that i publish to np
+  [FAIL] rate=0/3 expected=True: scaffold a feedback button that sites paste onto their page 
+  [FAIL] rate=0/3 expected=True: add a floating launcher mode so people just paste the script
+  [PASS] rate=0/3 expected=False: our next.js marketing site needs server-side rendering on th
+  [PASS] rate=0/3 expected=False: how do i embed a youtube video and an iframe of our booking 
+  [PASS] rate=0/3 expected=False: help me install and configure the Intercom messenger on our 
+  [PASS] rate=0/3 expected=False: create a chrome extension that injects a summarize button in
+
+Improving description...
+Proposed (23.8s): Use this skill when the user is building — or debugging — a component that gets embedded on *other people's* websites via a `<script>` tag, snippet, or CDN link: a chat/support bubble, booking or feedback launcher, newsletter signup, pricing table, reviews or comment box that end users paste onto their own sites and configure with data attributes, an API key, or JS calls like `widget('open')` (Intercom-style command-queue loaders). Also use for any React component that mounts inside a Shadow DOM to isolate it from a host page's CSS — especially "my Tailwind (v4) renders unstyled inside the shadow root" problems — and for editing an existing embed project (files like `embed.ts`, `defineWidget`, `bundlehive.config`, or widgets under `examples/`). This is BundleHive's job even when the user never names it. Do NOT use it for your own app's pages, routes, or dashboards, or for reusable component libraries published to npm for other developers to import.
+
+============================================================
+Iteration 3/5
+Description: Use this skill when the user is building — or debugging — a component that gets embedded on *other people's* websites via a `<script>` tag, snippet, or CDN link: a chat/support bubble, booking or feedback launcher, newsletter signup, pricing table, reviews or comment box that end users paste onto their own sites and configure with data attributes, an API key, or JS calls like `widget('open')` (Intercom-style command-queue loaders). Also use for any React component that mounts inside a Shadow DOM to isolate it from a host page's CSS — especially "my Tailwind (v4) renders unstyled inside the shadow root" problems — and for editing an existing embed project (files like `embed.ts`, `defineWidget`, `bundlehive.config`, or widgets under `examples/`). This is BundleHive's job even when the user never names it. Do NOT use it for your own app's pages, routes, or dashboards, or for reusable component libraries published to npm for other developers to import.
+============================================================
+Train: 18/36 correct, precision=100% recall=0% accuracy=50% (59.6s)
+  [FAIL] rate=0/3 expected=True: build a newsletter signup box that any blog can embed, with 
+  [FAIL] rate=0/3 expected=True: i want customers to call something like widget('open') and p
+  [FAIL] rate=0/3 expected=True: my tailwind v4 classes render completely unstyled inside the
+  [FAIL] rate=0/3 expected=True: we already have a widget in examples/ using defineWidget and
+  [FAIL] rate=0/3 expected=True: i'm building a customer support chat bubble that our users c
+  [FAIL] rate=0/3 expected=True: need to make an embeddable pricing table in react that other
+  [PASS] rate=0/3 expected=False: i need a reusable Button and Card component for our design s
+  [PASS] rate=0/3 expected=False: set up github actions to publish my node cli tool to npm on 
+  [PASS] rate=0/3 expected=False: my react component's tailwind colors aren't applying, i thin
+  [PASS] rate=0/3 expected=False: set up a bun workspaces monorepo with shared tsconfig for ou
+  [PASS] rate=0/3 expected=False: build me a dashboard in next.js to show our internal sales m
+  [PASS] rate=0/3 expected=False: i want to add a live chat panel to the dashboard page of my 
+Test : 12/24 correct, precision=100% recall=0% accuracy=50% (0.0s)
+  [FAIL] rate=0/3 expected=True: turn this react component into something i can embed on a cu
+  [FAIL] rate=0/3 expected=True: how do i build a drop-in reviews widget that i publish to np
+  [FAIL] rate=0/3 expected=True: scaffold a feedback button that sites paste onto their page 
+  [FAIL] rate=0/3 expected=True: add a floating launcher mode so people just paste the script
+  [PASS] rate=0/3 expected=False: how do i embed a youtube video and an iframe of our booking 
+  [PASS] rate=0/3 expected=False: create a chrome extension that injects a summarize button in
+  [PASS] rate=0/3 expected=False: help me install and configure the Intercom messenger on our 
+  [PASS] rate=0/3 expected=False: our next.js marketing site needs server-side rendering on th
+
+Improving description...
+Proposed (29.7s): Use this skill to build, scaffold, or debug an embeddable widget: a self-contained UI component other people drop onto their own sites via a `<script>` tag, CDN link, snippet, or npm embed. Trigger it for chat/support bubbles, booking or feedback launchers, newsletter signups, pricing tables, reviews or comment boxes — anything a customer pastes onto their site and configures with data attributes, an API key, or JS calls like `widget('open')` (Intercom-style command-queue loaders). Also trigger for any React component that must mount inside a Shadow DOM to isolate it from the host page's CSS — including "my Tailwind (v4) renders unstyled inside the shadow root" — and for editing an existing embed project (files like `embed.ts`, `defineWidget`, `bundlehive.config`, or widgets under `examples/`). Right tool even when the user never says "BundleHive." Do NOT use for your own app's pages, routes, or dashboards, or for reusable component libraries published for other developers to import.
+
+============================================================
+Iteration 4/5
+Description: Use this skill to build, scaffold, or debug an embeddable widget: a self-contained UI component other people drop onto their own sites via a `<script>` tag, CDN link, snippet, or npm embed. Trigger it for chat/support bubbles, booking or feedback launchers, newsletter signups, pricing tables, reviews or comment boxes — anything a customer pastes onto their site and configures with data attributes, an API key, or JS calls like `widget('open')` (Intercom-style command-queue loaders). Also trigger for any React component that must mount inside a Shadow DOM to isolate it from the host page's CSS — including "my Tailwind (v4) renders unstyled inside the shadow root" — and for editing an existing embed project (files like `embed.ts`, `defineWidget`, `bundlehive.config`, or widgets under `examples/`). Right tool even when the user never says "BundleHive." Do NOT use for your own app's pages, routes, or dashboards, or for reusable component libraries published for other developers to import.
+============================================================
+Train: 18/36 correct, precision=100% recall=0% accuracy=50% (61.6s)
+  [FAIL] rate=0/3 expected=True: build a newsletter signup box that any blog can embed, with 
+  [FAIL] rate=0/3 expected=True: my tailwind v4 classes render completely unstyled inside the
+  [FAIL] rate=0/3 expected=True: i want customers to call something like widget('open') and p
+  [FAIL] rate=0/3 expected=True: we already have a widget in examples/ using defineWidget and
+  [FAIL] rate=0/3 expected=True: i'm building a customer support chat bubble that our users c
+  [FAIL] rate=0/3 expected=True: need to make an embeddable pricing table in react that other
+  [PASS] rate=0/3 expected=False: my react component's tailwind colors aren't applying, i thin
+  [PASS] rate=0/3 expected=False: set up github actions to publish my node cli tool to npm on 
+  [PASS] rate=0/3 expected=False: i need a reusable Button and Card component for our design s
+  [PASS] rate=0/3 expected=False: set up a bun workspaces monorepo with shared tsconfig for ou
+  [PASS] rate=0/3 expected=False: build me a dashboard in next.js to show our internal sales m
+  [PASS] rate=0/3 expected=False: i want to add a live chat panel to the dashboard page of my 
+Test : 12/24 correct, precision=100% recall=0% accuracy=50% (0.0s)
+  [FAIL] rate=0/3 expected=True: turn this react component into something i can embed on a cu
+  [FAIL] rate=0/3 expected=True: how do i build a drop-in reviews widget that i publish to np
+  [FAIL] rate=0/3 expected=True: scaffold a feedback button that sites paste onto their page 
+  [FAIL] rate=0/3 expected=True: add a floating launcher mode so people just paste the script
+  [PASS] rate=0/3 expected=False: how do i embed a youtube video and an iframe of our booking 
+  [PASS] rate=0/3 expected=False: create a chrome extension that injects a summarize button in
+  [PASS] rate=0/3 expected=False: help me install and configure the Intercom messenger on our 
+  [PASS] rate=0/3 expected=False: our next.js marketing site needs server-side rendering on th
+
+Improving description...
+Proposed (21.0s): Use this skill when the user is building UI that runs on *other people's* websites — code they hand to customers to drop onto their own pages. Signals: "embed", "embeddable", "drop-in `<script>` tag", CDN/unpkg snippet, config via data attributes or an API key, an Intercom-style loader like `widget('open')`, or a floating chat/support/booking/feedback/newsletter/pricing/reviews launcher a third party pastes onto their site. Also use for any React component mounted in a Shadow DOM to shield it from host-page CSS — including "my Tailwind (v4) renders unstyled inside the shadow root" — and for editing an existing embed project (`embed.ts`, `defineWidget`, `bundlehive.config`, widgets under `examples/`). Applies even without the word "BundleHive." Not for your own app's pages, routes, or dashboards, nor for component libraries published for other devs to import.
+
+============================================================
+Iteration 5/5
+Description: Use this skill when the user is building UI that runs on *other people's* websites — code they hand to customers to drop onto their own pages. Signals: "embed", "embeddable", "drop-in `<script>` tag", CDN/unpkg snippet, config via data attributes or an API key, an Intercom-style loader like `widget('open')`, or a floating chat/support/booking/feedback/newsletter/pricing/reviews launcher a third party pastes onto their site. Also use for any React component mounted in a Shadow DOM to shield it from host-page CSS — including "my Tailwind (v4) renders unstyled inside the shadow root" — and for editing an existing embed project (`embed.ts`, `defineWidget`, `bundlehive.config`, widgets under `examples/`). Applies even without the word "BundleHive." Not for your own app's pages, routes, or dashboards, nor for component libraries published for other devs to import.
+============================================================
+Train: 18/36 correct, precision=100% recall=0% accuracy=50% (66.5s)
+  [FAIL] rate=0/3 expected=True: i want customers to call something like widget('open') and p
+  [FAIL] rate=0/3 expected=True: my tailwind v4 classes render completely unstyled inside the
+  [FAIL] rate=0/3 expected=True: build a newsletter signup box that any blog can embed, with 
+  [FAIL] rate=0/3 expected=True: we already have a widget in examples/ using defineWidget and
+  [FAIL] rate=0/3 expected=True: i'm building a customer support chat bubble that our users c
+  [FAIL] rate=0/3 expected=True: need to make an embeddable pricing table in react that other
+  [PASS] rate=0/3 expected=False: i need a reusable Button and Card component for our design s
+  [PASS] rate=0/3 expected=False: set up github actions to publish my node cli tool to npm on 
+  [PASS] rate=0/3 expected=False: my react component's tailwind colors aren't applying, i thin
+  [PASS] rate=0/3 expected=False: set up a bun workspaces monorepo with shared tsconfig for ou
+  [PASS] rate=0/3 expected=False: i want to add a live chat panel to the dashboard page of my 
+  [PASS] rate=0/3 expected=False: build me a dashboard in next.js to show our internal sales m
+Test : 12/24 correct, precision=100% recall=0% accuracy=50% (0.0s)
+  [FAIL] rate=0/3 expected=True: turn this react component into something i can embed on a cu
+  [FAIL] rate=0/3 expected=True: how do i build a drop-in reviews widget that i publish to np
+  [FAIL] rate=0/3 expected=True: scaffold a feedback button that sites paste onto their page 
+  [FAIL] rate=0/3 expected=True: add a floating launcher mode so people just paste the script
+  [PASS] rate=0/3 expected=False: how do i embed a youtube video and an iframe of our booking 
+  [PASS] rate=0/3 expected=False: our next.js marketing site needs server-side rendering on th
+  [PASS] rate=0/3 expected=False: help me install and configure the Intercom messenger on our 
+  [PASS] rate=0/3 expected=False: create a chrome extension that injects a summarize button in
+
+Max iterations reached (5).
+
+Exit reason: max_iterations (5)
+Best score: 4/8 (iteration 1)
+Results saved to: /Users/nguyenduy/Developer/personal/bundlehive/.claude/skills/bundlehive-widget-workspace/optimization/2026-07-02_203802
+{
+  "exit_reason": "max_iterations (5)",
+  "original_description": "Build a standalone, embeddable widget with BundleHive \u2014 a React component that ships as a self-contained <script> bundle and mounts onto any website inside an isolated Shadow DOM (Tailwind included). Use this whenever the user wants to create, scaffold, or build an embeddable widget, a third-party embed, a \"drop-in <script>\" component, a chat/support/booking/feedback launcher, a shadow-DOM web component, a CDN/unpkg widget, or anything a customer pastes onto their own site \u2014 even if they don't say \"BundleHive\" by name. Also use when working inside a BundleHive repo (files named embed.ts, defineWidget, or bundlehive.config), or when adding runtime config, a floating launcher, or a command-queue loader to an embeddable component.",
+  "best_description": "Build a standalone, embeddable widget with BundleHive \u2014 a React component that ships as a self-contained <script> bundle and mounts onto any website inside an isolated Shadow DOM (Tailwind included). Use this whenever the user wants to create, scaffold, or build an embeddable widget, a third-party embed, a \"drop-in <script>\" component, a chat/support/booking/feedback launcher, a shadow-DOM web component, a CDN/unpkg widget, or anything a customer pastes onto their own site \u2014 even if they don't say \"BundleHive\" by name. Also use when working inside a BundleHive repo (files named embed.ts, defineWidget, or bundlehive.config), or when adding runtime config, a floating launcher, or a command-queue loader to an embeddable component.",
+  "best_score": "4/8",
+  "best_train_score": "6/12",
+  "best_test_score": "4/8",
+  "final_description": "Use this skill when the user is building UI that runs on *other people's* websites \u2014 code they hand to customers to drop onto their own pages. Signals: \"embed\", \"embeddable\", \"drop-in `<script>` tag\", CDN/unpkg snippet, config via data attributes or an API key, an Intercom-style loader like `widget('open')`, or a floating chat/support/booking/feedback/newsletter/pricing/reviews launcher a third party pastes onto their site. Also use for any React component mounted in a Shadow DOM to shield it from host-page CSS \u2014 including \"my Tailwind (v4) renders unstyled inside the shadow root\" \u2014 and for editing an existing embed project (`embed.ts`, `defineWidget`, `bundlehive.config`, widgets under `examples/`). Applies even without the word \"BundleHive.\" Not for your own app's pages, routes, or dashboards, nor for component libraries published for other devs to import.",
+  "iterations_run": 5,
+  "holdout": 0.4,
+  "train_size": 12,
+  "test_size": 8,
+  "history": [
+    {
+      "iteration": 1,
+      "description": "Build a standalone, embeddable widget with BundleHive \u2014 a React component that ships as a self-contained <script> bundle and mounts onto any website inside an isolated Shadow DOM (Tailwind included). Use this whenever the user wants to create, scaffold, or build an embeddable widget, a third-party embed, a \"drop-in <script>\" component, a chat/support/booking/feedback launcher, a shadow-DOM web component, a CDN/unpkg widget, or anything a customer pastes onto their own site \u2014 even if they don't say \"BundleHive\" by name. Also use when working inside a BundleHive repo (files named embed.ts, defineWidget, or bundlehive.config), or when adding runtime config, a floating launcher, or a command-queue loader to an embeddable component.",
+      "train_passed": 6,
+      "train_failed": 6,
+      "train_total": 12,
+      "train_results": [
+        {
+          "query": "we already have a widget in examples/ using defineWidget and embed.ts, i want to add a new booking widget alongside it",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "build a newsletter signup box that any blog can embed, with config passed via data attributes on the element",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "i want customers to call something like widget('open') and pass their api key as config before my async script has even finished loading, kind of like the intercom snippet",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "my tailwind v4 classes render completely unstyled inside the shadow root of my embeddable component, whats going on",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "i'm building a customer support chat bubble that our users can drop onto their own websites with a script tag. it needs to be isolated so their css doesn't break it. how should i structure this?",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "need to make an embeddable pricing table in react that other sites embed via <script>. my tailwind styles keep breaking when i put the component in shadow dom",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "set up github actions to publish my node cli tool to npm on every tagged release",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "i need a reusable Button and Card component for our design system that we publish to npm for our other apps to install",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "my react component's tailwind colors aren't applying, i think my content config is wrong",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "set up a bun workspaces monorepo with shared tsconfig for our backend packages",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "i want to add a live chat panel to the dashboard page of my own saas react app",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "build me a dashboard in next.js to show our internal sales metrics by region, pulling from our postgres db",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        }
+      ],
+      "test_passed": 4,
+      "test_failed": 4,
+      "test_total": 8,
+      "test_results": [
+        {
+          "query": "turn this react component into something i can embed on a customer's wordpress site with just a single script tag",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "how do i build a drop-in reviews widget that i publish to npm and people load from unpkg with a script tag?",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "scaffold a feedback button that sites paste onto their page \u2014 floats bottom-right, opens a little form",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "add a floating launcher mode so people just paste the script and it injects itself into the page, no element tag to place",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "our next.js marketing site needs server-side rendering on the blog pages for SEO, how do i set that up",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "how do i embed a youtube video and an iframe of our booking app into a partner's landing page",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "create a chrome extension that injects a summarize button into the gmail toolbar",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "help me install and configure the Intercom messenger on our marketing site",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        }
+      ],
+      "passed": 6,
+      "failed": 6,
+      "total": 12,
+      "results": [
+        {
+          "query": "we already have a widget in examples/ using defineWidget and embed.ts, i want to add a new booking widget alongside it",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "build a newsletter signup box that any blog can embed, with config passed via data attributes on the element",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "i want customers to call something like widget('open') and pass their api key as config before my async script has even finished loading, kind of like the intercom snippet",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "my tailwind v4 classes render completely unstyled inside the shadow root of my embeddable component, whats going on",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "i'm building a customer support chat bubble that our users can drop onto their own websites with a script tag. it needs to be isolated so their css doesn't break it. how should i structure this?",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "need to make an embeddable pricing table in react that other sites embed via <script>. my tailwind styles keep breaking when i put the component in shadow dom",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "set up github actions to publish my node cli tool to npm on every tagged release",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "i need a reusable Button and Card component for our design system that we publish to npm for our other apps to install",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "my react component's tailwind colors aren't applying, i think my content config is wrong",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "set up a bun workspaces monorepo with shared tsconfig for our backend packages",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "i want to add a live chat panel to the dashboard page of my own saas react app",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "build me a dashboard in next.js to show our internal sales metrics by region, pulling from our postgres db",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "iteration": 2,
+      "description": "Use this skill to build a UI widget that runs on *other people's* websites \u2014 a component someone else drops onto their page with a `<script>` tag, embeds via a snippet, or loads from a CDN. Reach for it whenever the goal is a third-party embed: a support/chat bubble, booking or feedback launcher, newsletter signup, pricing table, reviews or comment box that customers paste onto their own sites and configure with data attributes, an API key, or JS commands. Also use for any React component that must render inside a Shadow DOM to isolate it from the host page's CSS (including Tailwind-not-styling-inside-shadow-root problems), or when editing an existing embed project (files like embed.ts, defineWidget, bundlehive.config). Skip it for your own app's pages, routes, or dashboards, and for internal component libraries you publish to npm.",
+      "train_passed": 6,
+      "train_failed": 6,
+      "train_total": 12,
+      "train_results": [
+        {
+          "query": "i want customers to call something like widget('open') and pass their api key as config before my async script has even finished loading, kind of like the intercom snippet",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "we already have a widget in examples/ using defineWidget and embed.ts, i want to add a new booking widget alongside it",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "build a newsletter signup box that any blog can embed, with config passed via data attributes on the element",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "my tailwind v4 classes render completely unstyled inside the shadow root of my embeddable component, whats going on",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "i'm building a customer support chat bubble that our users can drop onto their own websites with a script tag. it needs to be isolated so their css doesn't break it. how should i structure this?",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "need to make an embeddable pricing table in react that other sites embed via <script>. my tailwind styles keep breaking when i put the component in shadow dom",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "i need a reusable Button and Card component for our design system that we publish to npm for our other apps to install",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "set up github actions to publish my node cli tool to npm on every tagged release",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "my react component's tailwind colors aren't applying, i think my content config is wrong",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "set up a bun workspaces monorepo with shared tsconfig for our backend packages",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "i want to add a live chat panel to the dashboard page of my own saas react app",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "build me a dashboard in next.js to show our internal sales metrics by region, pulling from our postgres db",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        }
+      ],
+      "test_passed": 4,
+      "test_failed": 4,
+      "test_total": 8,
+      "test_results": [
+        {
+          "query": "turn this react component into something i can embed on a customer's wordpress site with just a single script tag",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "how do i build a drop-in reviews widget that i publish to npm and people load from unpkg with a script tag?",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "scaffold a feedback button that sites paste onto their page \u2014 floats bottom-right, opens a little form",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "add a floating launcher mode so people just paste the script and it injects itself into the page, no element tag to place",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "our next.js marketing site needs server-side rendering on the blog pages for SEO, how do i set that up",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "how do i embed a youtube video and an iframe of our booking app into a partner's landing page",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "help me install and configure the Intercom messenger on our marketing site",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "create a chrome extension that injects a summarize button into the gmail toolbar",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        }
+      ],
+      "passed": 6,
+      "failed": 6,
+      "total": 12,
+      "results": [
+        {
+          "query": "i want customers to call something like widget('open') and pass their api key as config before my async script has even finished loading, kind of like the intercom snippet",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "we already have a widget in examples/ using defineWidget and embed.ts, i want to add a new booking widget alongside it",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "build a newsletter signup box that any blog can embed, with config passed via data attributes on the element",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "my tailwind v4 classes render completely unstyled inside the shadow root of my embeddable component, whats going on",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "i'm building a customer support chat bubble that our users can drop onto their own websites with a script tag. it needs to be isolated so their css doesn't break it. how should i structure this?",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "need to make an embeddable pricing table in react that other sites embed via <script>. my tailwind styles keep breaking when i put the component in shadow dom",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "i need a reusable Button and Card component for our design system that we publish to npm for our other apps to install",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "set up github actions to publish my node cli tool to npm on every tagged release",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "my react component's tailwind colors aren't applying, i think my content config is wrong",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "set up a bun workspaces monorepo with shared tsconfig for our backend packages",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "i want to add a live chat panel to the dashboard page of my own saas react app",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "build me a dashboard in next.js to show our internal sales metrics by region, pulling from our postgres db",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "iteration": 3,
+      "description": "Use this skill when the user is building \u2014 or debugging \u2014 a component that gets embedded on *other people's* websites via a `<script>` tag, snippet, or CDN link: a chat/support bubble, booking or feedback launcher, newsletter signup, pricing table, reviews or comment box that end users paste onto their own sites and configure with data attributes, an API key, or JS calls like `widget('open')` (Intercom-style command-queue loaders). Also use for any React component that mounts inside a Shadow DOM to isolate it from a host page's CSS \u2014 especially \"my Tailwind (v4) renders unstyled inside the shadow root\" problems \u2014 and for editing an existing embed project (files like `embed.ts`, `defineWidget`, `bundlehive.config`, or widgets under `examples/`). This is BundleHive's job even when the user never names it. Do NOT use it for your own app's pages, routes, or dashboards, or for reusable component libraries published to npm for other developers to import.",
+      "train_passed": 6,
+      "train_failed": 6,
+      "train_total": 12,
+      "train_results": [
+        {
+          "query": "build a newsletter signup box that any blog can embed, with config passed via data attributes on the element",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "i want customers to call something like widget('open') and pass their api key as config before my async script has even finished loading, kind of like the intercom snippet",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "my tailwind v4 classes render completely unstyled inside the shadow root of my embeddable component, whats going on",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "we already have a widget in examples/ using defineWidget and embed.ts, i want to add a new booking widget alongside it",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "i'm building a customer support chat bubble that our users can drop onto their own websites with a script tag. it needs to be isolated so their css doesn't break it. how should i structure this?",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "need to make an embeddable pricing table in react that other sites embed via <script>. my tailwind styles keep breaking when i put the component in shadow dom",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "i need a reusable Button and Card component for our design system that we publish to npm for our other apps to install",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "set up github actions to publish my node cli tool to npm on every tagged release",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "my react component's tailwind colors aren't applying, i think my content config is wrong",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "set up a bun workspaces monorepo with shared tsconfig for our backend packages",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "build me a dashboard in next.js to show our internal sales metrics by region, pulling from our postgres db",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "i want to add a live chat panel to the dashboard page of my own saas react app",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        }
+      ],
+      "test_passed": 4,
+      "test_failed": 4,
+      "test_total": 8,
+      "test_results": [
+        {
+          "query": "turn this react component into something i can embed on a customer's wordpress site with just a single script tag",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "how do i build a drop-in reviews widget that i publish to npm and people load from unpkg with a script tag?",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "scaffold a feedback button that sites paste onto their page \u2014 floats bottom-right, opens a little form",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "add a floating launcher mode so people just paste the script and it injects itself into the page, no element tag to place",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "how do i embed a youtube video and an iframe of our booking app into a partner's landing page",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "create a chrome extension that injects a summarize button into the gmail toolbar",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "help me install and configure the Intercom messenger on our marketing site",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "our next.js marketing site needs server-side rendering on the blog pages for SEO, how do i set that up",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        }
+      ],
+      "passed": 6,
+      "failed": 6,
+      "total": 12,
+      "results": [
+        {
+          "query": "build a newsletter signup box that any blog can embed, with config passed via data attributes on the element",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "i want customers to call something like widget('open') and pass their api key as config before my async script has even finished loading, kind of like the intercom snippet",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "my tailwind v4 classes render completely unstyled inside the shadow root of my embeddable component, whats going on",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "we already have a widget in examples/ using defineWidget and embed.ts, i want to add a new booking widget alongside it",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "i'm building a customer support chat bubble that our users can drop onto their own websites with a script tag. it needs to be isolated so their css doesn't break it. how should i structure this?",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "need to make an embeddable pricing table in react that other sites embed via <script>. my tailwind styles keep breaking when i put the component in shadow dom",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "i need a reusable Button and Card component for our design system that we publish to npm for our other apps to install",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "set up github actions to publish my node cli tool to npm on every tagged release",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "my react component's tailwind colors aren't applying, i think my content config is wrong",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "set up a bun workspaces monorepo with shared tsconfig for our backend packages",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "build me a dashboard in next.js to show our internal sales metrics by region, pulling from our postgres db",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "i want to add a live chat panel to the dashboard page of my own saas react app",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "iteration": 4,
+      "description": "Use this skill to build, scaffold, or debug an embeddable widget: a self-contained UI component other people drop onto their own sites via a `<script>` tag, CDN link, snippet, or npm embed. Trigger it for chat/support bubbles, booking or feedback launchers, newsletter signups, pricing tables, reviews or comment boxes \u2014 anything a customer pastes onto their site and configures with data attributes, an API key, or JS calls like `widget('open')` (Intercom-style command-queue loaders). Also trigger for any React component that must mount inside a Shadow DOM to isolate it from the host page's CSS \u2014 including \"my Tailwind (v4) renders unstyled inside the shadow root\" \u2014 and for editing an existing embed project (files like `embed.ts`, `defineWidget`, `bundlehive.config`, or widgets under `examples/`). Right tool even when the user never says \"BundleHive.\" Do NOT use for your own app's pages, routes, or dashboards, or for reusable component libraries published for other developers to import.",
+      "train_passed": 6,
+      "train_failed": 6,
+      "train_total": 12,
+      "train_results": [
+        {
+          "query": "build a newsletter signup box that any blog can embed, with config passed via data attributes on the element",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "my tailwind v4 classes render completely unstyled inside the shadow root of my embeddable component, whats going on",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "i want customers to call something like widget('open') and pass their api key as config before my async script has even finished loading, kind of like the intercom snippet",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "we already have a widget in examples/ using defineWidget and embed.ts, i want to add a new booking widget alongside it",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "i'm building a customer support chat bubble that our users can drop onto their own websites with a script tag. it needs to be isolated so their css doesn't break it. how should i structure this?",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "need to make an embeddable pricing table in react that other sites embed via <script>. my tailwind styles keep breaking when i put the component in shadow dom",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "my react component's tailwind colors aren't applying, i think my content config is wrong",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "set up github actions to publish my node cli tool to npm on every tagged release",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "i need a reusable Button and Card component for our design system that we publish to npm for our other apps to install",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "set up a bun workspaces monorepo with shared tsconfig for our backend packages",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "build me a dashboard in next.js to show our internal sales metrics by region, pulling from our postgres db",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "i want to add a live chat panel to the dashboard page of my own saas react app",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        }
+      ],
+      "test_passed": 4,
+      "test_failed": 4,
+      "test_total": 8,
+      "test_results": [
+        {
+          "query": "turn this react component into something i can embed on a customer's wordpress site with just a single script tag",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "how do i build a drop-in reviews widget that i publish to npm and people load from unpkg with a script tag?",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "scaffold a feedback button that sites paste onto their page \u2014 floats bottom-right, opens a little form",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "add a floating launcher mode so people just paste the script and it injects itself into the page, no element tag to place",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "how do i embed a youtube video and an iframe of our booking app into a partner's landing page",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "create a chrome extension that injects a summarize button into the gmail toolbar",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "help me install and configure the Intercom messenger on our marketing site",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "our next.js marketing site needs server-side rendering on the blog pages for SEO, how do i set that up",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        }
+      ],
+      "passed": 6,
+      "failed": 6,
+      "total": 12,
+      "results": [
+        {
+          "query": "build a newsletter signup box that any blog can embed, with config passed via data attributes on the element",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "my tailwind v4 classes render completely unstyled inside the shadow root of my embeddable component, whats going on",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "i want customers to call something like widget('open') and pass their api key as config before my async script has even finished loading, kind of like the intercom snippet",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "we already have a widget in examples/ using defineWidget and embed.ts, i want to add a new booking widget alongside it",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "i'm building a customer support chat bubble that our users can drop onto their own websites with a script tag. it needs to be isolated so their css doesn't break it. how should i structure this?",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "need to make an embeddable pricing table in react that other sites embed via <script>. my tailwind styles keep breaking when i put the component in shadow dom",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "my react component's tailwind colors aren't applying, i think my content config is wrong",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "set up github actions to publish my node cli tool to npm on every tagged release",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "i need a reusable Button and Card component for our design system that we publish to npm for our other apps to install",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "set up a bun workspaces monorepo with shared tsconfig for our backend packages",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "build me a dashboard in next.js to show our internal sales metrics by region, pulling from our postgres db",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "i want to add a live chat panel to the dashboard page of my own saas react app",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "iteration": 5,
+      "description": "Use this skill when the user is building UI that runs on *other people's* websites \u2014 code they hand to customers to drop onto their own pages. Signals: \"embed\", \"embeddable\", \"drop-in `<script>` tag\", CDN/unpkg snippet, config via data attributes or an API key, an Intercom-style loader like `widget('open')`, or a floating chat/support/booking/feedback/newsletter/pricing/reviews launcher a third party pastes onto their site. Also use for any React component mounted in a Shadow DOM to shield it from host-page CSS \u2014 including \"my Tailwind (v4) renders unstyled inside the shadow root\" \u2014 and for editing an existing embed project (`embed.ts`, `defineWidget`, `bundlehive.config`, widgets under `examples/`). Applies even without the word \"BundleHive.\" Not for your own app's pages, routes, or dashboards, nor for component libraries published for other devs to import.",
+      "train_passed": 6,
+      "train_failed": 6,
+      "train_total": 12,
+      "train_results": [
+        {
+          "query": "i want customers to call something like widget('open') and pass their api key as config before my async script has even finished loading, kind of like the intercom snippet",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "my tailwind v4 classes render completely unstyled inside the shadow root of my embeddable component, whats going on",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "build a newsletter signup box that any blog can embed, with config passed via data attributes on the element",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "we already have a widget in examples/ using defineWidget and embed.ts, i want to add a new booking widget alongside it",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "i'm building a customer support chat bubble that our users can drop onto their own websites with a script tag. it needs to be isolated so their css doesn't break it. how should i structure this?",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "need to make an embeddable pricing table in react that other sites embed via <script>. my tailwind styles keep breaking when i put the component in shadow dom",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "i need a reusable Button and Card component for our design system that we publish to npm for our other apps to install",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "set up github actions to publish my node cli tool to npm on every tagged release",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "my react component's tailwind colors aren't applying, i think my content config is wrong",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "set up a bun workspaces monorepo with shared tsconfig for our backend packages",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "i want to add a live chat panel to the dashboard page of my own saas react app",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "build me a dashboard in next.js to show our internal sales metrics by region, pulling from our postgres db",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        }
+      ],
+      "test_passed": 4,
+      "test_failed": 4,
+      "test_total": 8,
+      "test_results": [
+        {
+          "query": "turn this react component into something i can embed on a customer's wordpress site with just a single script tag",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "how do i build a drop-in reviews widget that i publish to npm and people load from unpkg with a script tag?",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "scaffold a feedback button that sites paste onto their page \u2014 floats bottom-right, opens a little form",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "add a floating launcher mode so people just paste the script and it injects itself into the page, no element tag to place",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "how do i embed a youtube video and an iframe of our booking app into a partner's landing page",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "our next.js marketing site needs server-side rendering on the blog pages for SEO, how do i set that up",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "help me install and configure the Intercom messenger on our marketing site",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "create a chrome extension that injects a summarize button into the gmail toolbar",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        }
+      ],
+      "passed": 6,
+      "failed": 6,
+      "total": 12,
+      "results": [
+        {
+          "query": "i want customers to call something like widget('open') and pass their api key as config before my async script has even finished loading, kind of like the intercom snippet",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "my tailwind v4 classes render completely unstyled inside the shadow root of my embeddable component, whats going on",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "build a newsletter signup box that any blog can embed, with config passed via data attributes on the element",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "we already have a widget in examples/ using defineWidget and embed.ts, i want to add a new booking widget alongside it",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "i'm building a customer support chat bubble that our users can drop onto their own websites with a script tag. it needs to be isolated so their css doesn't break it. how should i structure this?",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "need to make an embeddable pricing table in react that other sites embed via <script>. my tailwind styles keep breaking when i put the component in shadow dom",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "i need a reusable Button and Card component for our design system that we publish to npm for our other apps to install",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "set up github actions to publish my node cli tool to npm on every tagged release",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "my react component's tailwind colors aren't applying, i think my content config is wrong",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "set up a bun workspaces monorepo with shared tsconfig for our backend packages",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "i want to add a live chat panel to the dashboard page of my own saas react app",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "build me a dashboard in next.js to show our internal sales metrics by region, pulling from our postgres db",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        }
+      ]
+    }
+  ]
+}

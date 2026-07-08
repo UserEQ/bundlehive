@@ -1,4 +1,4 @@
-import { createLoader, defineWidget } from "@bundlehive/react";
+import { createLoader, defineWidget } from "@usereq/bundlehive";
 import styles from "./styles.css?inline";
 import { ChatPanel, type ChatConfig } from "./widget";
 

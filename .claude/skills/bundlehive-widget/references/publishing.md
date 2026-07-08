@@ -46,7 +46,7 @@ embed immediately. For stability, tell customers to pin a major:
 
 - **You publishing a widget** (this doc): your widget package → npm → customers
   embed it. This is the common case.
-- **Publishing the BundleHive framework itself** (`@bundlehive/react`, `/build`,
+- **Publishing the BundleHive framework itself** (`@usereq/bundlehive`, `/build`,
   `/cli`): only relevant if you maintain BundleHive. Those packages need a
   compile step (they currently ship TS source) before they're npm-ready — out of
   scope for widget authors.

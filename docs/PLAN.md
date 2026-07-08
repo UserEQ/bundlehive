@@ -64,7 +64,7 @@ my-widget/
 
 ```tsx
 // src/index.tsx
-import { defineWidget } from "@bundlehive/react";
+import { defineWidget } from "@usereq/bundlehive";
 
 function PricingTable() {
   const { config } = useWidget<{ plan: string }>();   // runtime config, typed
@@ -79,7 +79,7 @@ export default defineWidget(PricingTable, {
 
 No custom-element class, no shadow boilerplate, no `useSyncExternalStore` bridge — `defineWidget` generates all of it.
 
-### 4.2 Runtime (`@bundlehive/runtime` + `@bundlehive/react`)
+### 4.2 Runtime (`@usereq/bundlehive-runtime` + `@usereq/bundlehive`)
 
 The thin layer that gets bundled in:
 - Registers the custom element, attaches a Shadow root, mounts the React tree inside it (so React's listeners stay within the boundary).
@@ -135,10 +135,10 @@ That's the whole surface. Everything else is internal.
 ## 6. Packages
 
 ```
-@bundlehive/cli        # dev | build | create
-@bundlehive/react      # defineWidget, useWidget, <Portal>, hooks  (authoring)
-@bundlehive/runtime    # custom-element + shadow mount + css isolation (bundled into output)
-@bundlehive/build      # opinionated Vite/Rollup config + the Tailwind-shadow transform
+@usereq/bundlehive-cli        # dev | build | create
+@usereq/bundlehive      # defineWidget, useWidget, <Portal>, hooks  (authoring)
+@usereq/bundlehive-runtime    # custom-element + shadow mount + css isolation (bundled into output)
+@usereq/bundlehive-build      # opinionated Vite/Rollup config + the Tailwind-shadow transform
 create-bundlehive      # scaffolder
 ```
 
@@ -149,14 +149,14 @@ create-bundlehive      # scaffolder
 **Phase 0 — Load-bearing spike (prove the hard part) — ✅ DONE**
 Generate a working Shadow-DOM custom element from a plain React component, with adopted-stylesheet theming **including the Tailwind-v4-in-shadow-DOM fix**. If this is clean and stable, the framework is viable. Everything else is conventional.
 
-> Built in `packages/react` + `examples/counter`. `defineWidget` + `useWidget` + `<Portal>` work; the Tailwind-v4 transform (`:root`→`:host`, `@property` hoisting, shared constructable stylesheet) is implemented in `css-isolation.ts` and unit-verified; Vite build emits IIFE + ESM with Tailwind inlined. Both packages typecheck clean. (Browser visual confirmation still pending — run `bun --filter '@bundlehive/example-counter' dev` or open `examples/counter/demo.html`.)
+> Built in `packages/react` + `examples/counter`. `defineWidget` + `useWidget` + `<Portal>` work; the Tailwind-v4 transform (`:root`→`:host`, `@property` hoisting, shared constructable stylesheet) is implemented in `css-isolation.ts` and unit-verified; Vite build emits IIFE + ESM with Tailwind inlined. Both packages typecheck clean. (Browser visual confirmation still pending — run `bun --filter '@usereq/bundlehive-example-counter' dev` or open `examples/counter/demo.html`.)
 
 **Phase 1 — MVP — ✅ mostly done**
 - ✅ `defineWidget` + `useWidget` + runtime config from attributes.
-- ✅ `bundlehive build` → CDN IIFE (React bundled) + ESM, via `@bundlehive/build` preset + `@bundlehive/cli`.
+- ✅ `bundlehive build` → CDN IIFE (React bundled) + ESM, via `@usereq/bundlehive-build` preset + `@usereq/bundlehive-cli`.
 - ✅ Command-queue loader: `createLoader(name, widget)` installs a global, drains the inline-stub queue, routes `init`/`update`/`destroy` + imperative commands (`useWidgetCommands`). Supports rich object config via `setConfig`. Queue-draining logic unit-verified.
 - ✅ Three examples end-to-end: `counter` (placed) + `floating-badge` (auto-injected) + `loader-chat` (command queue). All build via the CLI.
-- ⬜ `.d.ts` type emit for the npm variant — not yet.
+- ✅ `.d.ts` type emit — all three packages build with `tsup` (`dist/*.js` + `.d.ts`), ship `dist` only, versioned `0.1.0`. See `docs/PUBLISHING.md`.
 
 **Phase 2 — DX & sharing — 🟡 in progress**
 - ✅ `bundlehive dev` (Vite dev server / playground; HMR via Vite default).

@@ -1,5 +1,5 @@
 {
-  "name": "@bundlehive/example-counter",
+  "name": "@usereq/bundlehive-example-counter",
   "private": true,
   "type": "module",
   "comment": "A real published widget would set private:false and `npm publish`. The CDN fields below are what make `https://unpkg.com/<name>` (no path) resolve to the IIFE embed bundle — unpkg/jsDelivr read `unpkg`, then `browser`, then `main`.",
@@ -15,12 +15,12 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@bundlehive/react": "workspace:*",
+    "@usereq/bundlehive": "workspace:*",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
-    "@bundlehive/cli": "workspace:*",
+    "@usereq/bundlehive-cli": "workspace:*",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "tailwindcss": "^4.2.3",

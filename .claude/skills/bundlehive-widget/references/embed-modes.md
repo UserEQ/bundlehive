@@ -13,7 +13,7 @@ an inline form) and config is simple.
 
 **`embed.ts`**
 ```ts
-import { defineWidget } from "@bundlehive/react";
+import { defineWidget } from "@usereq/bundlehive";
 import styles from "./styles.css?inline";
 import { Counter } from "./widget";
 
@@ -89,7 +89,7 @@ per-tenant keys) or the host page needs imperative control (`open`, `close`,
 
 **`embed.ts`**
 ```ts
-import { createLoader, defineWidget } from "@bundlehive/react";
+import { createLoader, defineWidget } from "@usereq/bundlehive";
 import styles from "./styles.css?inline";
 import { ChatPanel, type ChatConfig } from "./widget";
 

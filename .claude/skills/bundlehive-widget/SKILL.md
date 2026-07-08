@@ -1,16 +1,20 @@
 ---
 name: bundlehive-widget
 description: >-
-  Build a standalone, embeddable widget with BundleHive — a React component that
-  ships as a self-contained <script> bundle and mounts onto any website inside an
-  isolated Shadow DOM (Tailwind included). Use this whenever the user wants to
-  create, scaffold, or build an embeddable widget, a third-party embed, a
-  "drop-in <script>" component, a chat/support/booking/feedback launcher, a
-  shadow-DOM web component, a CDN/unpkg widget, or anything a customer pastes onto
-  their own site — even if they don't say "BundleHive" by name. Also use when
-  working inside a BundleHive repo (files named embed.ts, defineWidget, or
-  bundlehive.config), or when adding runtime config, a floating launcher, or a
-  command-queue loader to an embeddable component.
+  Build, scaffold, or debug an embeddable widget with BundleHive — a React
+  component customers drop onto their OWN websites via a <script> tag, CDN/unpkg
+  snippet, or embed code, isolated inside a Shadow DOM (Tailwind included). Trigger
+  signals: "embed", "embeddable", "drop-in <script>", a chat/support bubble, a
+  booking/feedback/newsletter launcher, a pricing table, or a reviews/comment box a
+  third party pastes onto their site and configures with data attributes, an API
+  key, or JS calls like widget('open') (Intercom-style command-queue loaders). Also
+  trigger for any React component that must mount inside a Shadow DOM to isolate it
+  from the host page's CSS — especially "my Tailwind (v4) renders unstyled inside
+  the shadow root" — and for editing an existing embed project (files like embed.ts,
+  defineWidget, bundlehive.config, or widgets under examples/). This is the right
+  tool even when the user never says "BundleHive." Do NOT use it for your own app's
+  pages, routes, or dashboards, or for reusable component libraries you publish to
+  npm for other developers to import.
 ---
 
 # Building embeddable widgets with BundleHive
@@ -43,7 +47,7 @@ standalone, it's just an npm package). Fill in these files, then `bundlehive bui
 ### 1. `package.json`
 
 The CDN fields are what make `https://unpkg.com/<pkg>` resolve to the embed
-bundle. `@bundlehive/*` come from npm once published; in the monorepo use
+bundle. `@usereq/bundlehive*` come from npm once published; in the monorepo use
 `workspace:*`.
 
 ```json
@@ -62,12 +66,12 @@ bundle. `@bundlehive/*` come from npm once published; in the monorepo use
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@bundlehive/react": "^0.1.0",
+    "@usereq/bundlehive": "^0.1.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
-    "@bundlehive/cli": "^0.1.0",
+    "@usereq/bundlehive-cli": "^0.1.0",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "tailwindcss": "^4.2.3",
@@ -113,7 +117,7 @@ declare module "*.css?inline" {
 
 ```tsx
 import { useState } from "react";
-import { useWidget } from "@bundlehive/react";
+import { useWidget } from "@usereq/bundlehive";
 
 interface Config { title?: string; accentColor?: string }
 
@@ -134,7 +138,7 @@ Importing this module registers the custom element. Pick an **embed mode** here
 (see below). Simplest — a placed element with attribute config:
 
 ```ts
-import { defineWidget } from "@bundlehive/react";
+import { defineWidget } from "@usereq/bundlehive";
 import styles from "./styles.css?inline";
 import { SupportWidget } from "./widget";
 

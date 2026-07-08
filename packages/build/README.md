@@ -1,11 +1,11 @@
-# @bundlehive/build
+# @usereq/bundlehive-build
 
 The Vite build preset behind [BundleHive](https://github.com/nguyenduy/bundlehive).
-Most authors don't use this directly — the [`bundlehive`](https://www.npmjs.com/package/@bundlehive/cli)
+Most authors don't use this directly — the [`bundlehive`](https://www.npmjs.com/package/@usereq/bundlehive-cli)
 CLI applies it for you. Reach for it only if you want an explicit `vite.config.ts`.
 
 ```bash
-npm install -D @bundlehive/build vite
+npm install -D @usereq/bundlehive-build vite
 ```
 
 ## Usage
@@ -13,7 +13,7 @@ npm install -D @bundlehive/build vite
 ```ts
 // vite.config.ts
 import { defineConfig } from "vite";
-import { widgetBuildConfig } from "@bundlehive/build";
+import { widgetBuildConfig } from "@usereq/bundlehive-build";
 
 export default defineConfig(widgetBuildConfig({ name: "AcmeWidget" }));
 ```

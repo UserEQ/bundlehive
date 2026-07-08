@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useWidget, useWidgetCommands } from "@bundlehive/react";
+import { useWidget, useWidgetCommands } from "@usereq/bundlehive";
 
 export interface ChatConfig {
   title?: string;

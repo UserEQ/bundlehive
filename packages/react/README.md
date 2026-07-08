@@ -1,18 +1,18 @@
-# @bundlehive/react
+# @usereq/bundlehive
 
 The runtime + authoring API for [BundleHive](https://github.com/nguyenduy/bundlehive) —
 build a standalone, embeddable React component that mounts onto any website as a
 Shadow-DOM custom element with isolated CSS (Tailwind v4 included).
 
 ```bash
-npm install @bundlehive/react react react-dom
+npm install @usereq/bundlehive react react-dom
 ```
 
 ## Usage
 
 ```tsx
 // widget.tsx
-import { useWidget } from "@bundlehive/react";
+import { useWidget } from "@usereq/bundlehive";
 
 export function Widget() {
   const { config } = useWidget<{ title?: string }>();
@@ -22,7 +22,7 @@ export function Widget() {
 
 ```ts
 // embed.ts — importing this registers <acme-widget>
-import { defineWidget } from "@bundlehive/react";
+import { defineWidget } from "@usereq/bundlehive";
 import styles from "./styles.css?inline";
 import { Widget } from "./widget";
 
@@ -33,7 +33,7 @@ export default defineWidget(Widget, {
 });
 ```
 
-Build with [`@bundlehive/cli`](https://www.npmjs.com/package/@bundlehive/cli), then:
+Build with [`@usereq/bundlehive-cli`](https://www.npmjs.com/package/@usereq/bundlehive-cli), then:
 
 ```html
 <acme-widget title="Hi"></acme-widget>

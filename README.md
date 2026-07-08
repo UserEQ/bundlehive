@@ -1,43 +1,89 @@
-# BundleHive
+<div align="center">
 
-A focused framework for building **standalone, embeddable React components**. Write a
-React component; get a self-contained bundle that mounts onto any website as a
-Shadow-DOM custom element with fully isolated CSS (including Tailwind v4).
+# 🐝 BundleHive
 
-No SSR, no routing, no meta-framework. Just: component in → embeddable widget out.
+**Build standalone, embeddable widgets in React.**
 
-> Status: **working spike**. The runtime (`@bundlehive/react`), the build preset
-> (`@bundlehive/build`), and the `bundlehive` CLI all work; two examples build and
-> run through the CLI with no hand-written Vite config. Browser visual confirmation
-> is still pending. See [docs/PLAN.md](docs/PLAN.md).
+Write a React component — ship a self-contained bundle that mounts onto *any*
+website as a Shadow-DOM custom element with fully isolated CSS (Tailwind v4 included).
 
-## Layout
+<!-- Badges become live once published -->
+[![npm](https://img.shields.io/npm/v/@usereq/bundlehive.svg)](https://www.npmjs.com/package/@usereq/bundlehive)
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+
+</div>
+
+> **Status: alpha (pre-1.0).** The runtime, build preset, and CLI work, are covered
+> by three examples, and the packages build to `dist` (npm-ready). Not yet published —
+> the remaining steps are the npm scope + release automation
+> ([docs/PUBLISHING.md](docs/PUBLISHING.md)). APIs may change before 1.0.
+
+---
+
+## Why
+
+Shipping a widget that lives on *someone else's* site — a support bubble, a
+pricing table, a feedback button — means hand-rolling the same fragile stack
+every time: a Vite library build, a custom element, a Shadow root, CSS isolation,
+and runtime config plumbing. And Tailwind v4 silently renders **unstyled** inside
+a shadow root unless you know the fix.
+
+BundleHive does all of that once, so you just write React.
 
 ```
-packages/
-  react/            @bundlehive/react — defineWidget, useWidget, <Portal>, CSS isolation, autoMount
-  build/            @bundlehive/build — Vite preset (lib mode, Tailwind, shadow-friendly)
-  cli/              @bundlehive/cli   — `bundlehive dev` / `bundlehive build`
-examples/
-  counter/          placed widget: Tailwind + runtime attrs + portal
-  floating-badge/   auto-injected launcher: appears from the script alone, no placed element
-  loader-chat/      command-queue loader: rich config + imperative open/close, queued pre-load
-docs/PLAN.md        scope, research, roadmap
+your React component  ──►  bundlehive build  ──►  <my-widget></my-widget>
+                                                   <script src="…/embed.js" async>
 ```
 
-## Authoring a widget
+## Features
+
+- 🧩 **Write plain React** — no custom-element or Shadow-DOM boilerplate.
+- 🎨 **Real CSS isolation** — styles scoped to a shadow root, host CSS locked out.
+  Tailwind v4 works inside the shadow root (we handle the `@property` / `:root`→`:host` fix).
+- 🚀 **One build → two outputs** — an IIFE bundle for `<script>`/CDN embedding and
+  an ESM package for npm consumers.
+- 🔌 **Three embed modes** — placed element, self-injecting launcher, or a
+  command-queue JS API (Intercom-style).
+- ⚙️ **Runtime config** — one bundle serves every tenant and environment; no
+  rebuild per key.
+- 🛠️ **Zero-config CLI** — `bundlehive dev` and `bundlehive build`, no `vite.config.ts`.
+
+## Install
+
+```bash
+npm install @usereq/bundlehive react react-dom
+npm install -D @usereq/bundlehive-cli tailwindcss
+```
+
+## Quickstart
+
+**`src/widget.tsx`** — a plain component:
 
 ```tsx
-// widget.tsx
-import { useWidget } from "@bundlehive/react";
-function Counter() {
-  const { config } = useWidget<{ start?: string }>();
-  // ...plain React, Tailwind classes work
-}
+import { useState } from "react";
+import { useWidget } from "@usereq/bundlehive";
 
-// embed.ts — importing this registers <bh-counter>
-import { defineWidget } from "@bundlehive/react";
-import styles from "./styles.css?inline";   // compiled Tailwind, adopted into the shadow root
+export function Counter() {
+  const { config } = useWidget<{ start?: string }>();
+  const [n, setN] = useState(Number(config.start ?? "0") || 0);
+  return (
+    <button
+      onClick={() => setN(n + 1)}
+      className="rounded-full bg-indigo-600 px-4 py-2 font-medium text-white"
+    >
+      Clicked {n} times
+    </button>
+  );
+}
+```
+
+**`src/embed.ts`** — register it (importing this defines `<bh-counter>`):
+
+```ts
+import { defineWidget } from "@usereq/bundlehive";
+import styles from "./styles.css?inline"; // @import "tailwindcss";
+import { Counter } from "./widget";
+
 export default defineWidget(Counter, {
   tag: "bh-counter",
   styles,
@@ -45,88 +91,79 @@ export default defineWidget(Counter, {
 });
 ```
 
-## Shipping it: publish → CDN → paste
+**Build and embed:**
 
-The build emits an IIFE bundle (`dist/embed.js`). Point your package's CDN fields
-at it and publish:
-
-```jsonc
-// package.json
-{ "unpkg": "./dist/embed.js", "jsdelivr": "./dist/embed.js", "files": ["dist"] }
+```bash
+bundlehive build            # → dist/embed.js (IIFE) + dist/embed.mjs (ESM)
 ```
 
-`npm publish` → the bundle is served at `https://unpkg.com/<your-package>`. Customers
-paste one element + one script — the script can go in `<head>` with `async`:
-
 ```html
-<bh-counter start="10" label="Stars" accent-color="#e11d48"></bh-counter>
+<bh-counter start="10"></bh-counter>
 <script src="https://unpkg.com/@acme/counter" async></script>
 ```
 
-This is the same shape as a `usereq`-style embed. It works with the script in `<head>`
-and `async` because registering a custom element is **order-independent**: whenever the
-parser reaches `<bh-counter>` — before or after the script runs — the browser upgrades
-the element in place and mounts it. (`examples/counter/demo.html` demonstrates exactly
-this, script-in-head.)
+The `<script>` can live in `<head>` with `async` — a custom element upgrades in
+place whenever the browser parses it, regardless of load order.
 
-## The CLI
+## Embed modes
 
-No `vite.config.ts` needed — the `bundlehive` CLI applies the build preset:
+| Mode | Customer pastes | Use for |
+| --- | --- | --- |
+| **Placed element** | a tag + script | config via string attributes, in a known spot |
+| **Auto-inject** (`autoMount: true`) | just the script | a floating launcher that injects itself |
+| **Command-queue loader** (`createLoader`) | a stub + script + JS calls | rich config, per-tenant keys, imperative `open`/`close` |
+
+See [embed-modes.md](.claude/skills/bundlehive-widget/references/embed-modes.md)
+for full examples of each.
+
+## How the CSS isolation works
+
+Mounting in a shadow root keeps the host page's CSS out and your CSS in — but
+Tailwind v4 declares theme variables on `:root` (which doesn't match a shadow
+host) and registers typed properties with `@property` (which browsers ignore
+inside shadow roots). BundleHive rewrites `:root`→`:host`, hoists `@property`
+rules to the document, and adopts one shared constructable stylesheet per widget.
+You just `@import "tailwindcss"` and import it `?inline` — the runtime does the rest.
+
+## CLI
 
 ```bash
 bundlehive dev      # HMR playground
-bundlehive build    # IIFE + ESM bundle → dist/   (--name, --entry, --external …)
+bundlehive build    # embed bundle → dist/   (--name, --entry, --external, --outDir, --port)
 ```
 
-## Two embed modes
+## Packages
 
-**Placed element** — the customer drops a tag (see `examples/counter`):
-```html
-<bh-counter start="10" accent-color="#e11d48"></bh-counter>
-<script src="https://unpkg.com/@acme/counter" async></script>
-```
+| Package | Purpose |
+| --- | --- |
+| [`@usereq/bundlehive`](packages/react) | Runtime + authoring API (`defineWidget`, `useWidget`, `Portal`, `createLoader`) |
+| [`@usereq/bundlehive-cli`](packages/cli) | `bundlehive dev` / `bundlehive build` |
+| [`@usereq/bundlehive-build`](packages/build) | The Vite build preset (used by the CLI) |
 
-**Auto-injected launcher** — the script alone, no tag (see `examples/floating-badge`).
-Set `autoMount: true` in `defineWidget`; the runtime waits for the DOM (so a
-`<head async>` script works) and injects the widget itself:
-```html
-<script src="https://unpkg.com/@acme/launcher" async></script>
-```
+## Examples
 
-**Command-queue loader** — a JS API the host page can call *before* the async
-bundle loads (the Intercom/Segment/GA pattern; see `examples/loader-chat`). Use it
-for rich/nested config and imperative control (`open`, `close`, `setUser`, …). In
-your embed: `createLoader("acme", widget)`. The customer pastes:
-```html
-<script>
-  (function (w) { w.acme = w.acme || function () {
-    (w.acme.q = w.acme.q || []).push(arguments); }; })(window);
-  acme('init', { title: 'Support', user: { name: 'Duy' } });  // queued…
-  acme('open');                                                // …then replayed
-</script>
-<script src="https://unpkg.com/@acme/widget" async></script>
-```
-Inside the component, `useWidgetCommands(cmd => …)` handles `open`/`close`/etc.
-
-## Try it
+- [`examples/counter`](examples/counter) — placed element, attributes, `<Portal>`
+- [`examples/floating-badge`](examples/floating-badge) — self-injecting launcher
+- [`examples/loader-chat`](examples/loader-chat) — command-queue loader
 
 ```bash
 bun install
-
-# dev playground (hostile host CSS included, to show isolation)
-bun --filter '@bundlehive/example-counter' dev
-
-# production embed bundles (IIFE + ESM)
-bun --filter '@bundlehive/example-counter' build       # → examples/counter/dist/
-bun --filter '@bundlehive/example-floating-badge' build # → examples/floating-badge/dist/
-# then open the matching demo.html to see the <script> embed
+bun --filter '@usereq/bundlehive-example-counter' dev   # then open the printed URL
 ```
 
-## What's proven so far
+## Docs
 
-- `defineWidget` generates a Shadow-DOM custom element and mounts a React root inside it.
-- Tailwind v4 works **inside the shadow root**: theme `:root` vars rewritten to `:host`,
-  `@property` rules hoisted to document scope, one constructable stylesheet shared per widget.
-- Runtime config from element attributes (re-renders on change, no remount).
-- `<Portal>` for overlays that escape layout but stay inside the shadow root.
-- Build emits IIFE (for `<script>` CDN embed) + ESM (for npm import).
+- **[llms.txt](llms.txt)** — agent-readable reference
+- **Agent skill** — [`.claude/skills/bundlehive-widget`](.claude/skills/bundlehive-widget) ([API](.claude/skills/bundlehive-widget/references/api.md) · [modes](.claude/skills/bundlehive-widget/references/embed-modes.md) · [publishing](.claude/skills/bundlehive-widget/references/publishing.md))
+- **[docs/PLAN.md](docs/PLAN.md)** — scope, research, roadmap
+- **[docs/PUBLISHING.md](docs/PUBLISHING.md)** — how releases work
+
+## What BundleHive is not
+
+Not a meta-framework. No SSR, no routing, no server — it's a bundler + thin
+runtime for client-rendered embeds. For your own app's pages, reach for Next.js
+or Vite.
+
+## License
+
+MIT

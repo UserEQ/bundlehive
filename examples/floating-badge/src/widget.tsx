@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useWidget } from "@bundlehive/react";
+import { useWidget } from "@usereq/bundlehive";
 
 export interface BadgeConfig {
   label?: string;

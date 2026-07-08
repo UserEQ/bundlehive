@@ -1,0 +1,22 @@
+[
+  {"query": "i'm building a customer support chat bubble that our users can drop onto their own websites with a script tag. it needs to be isolated so their css doesn't break it. how should i structure this?", "should_trigger": true},
+  {"query": "need to make an embeddable pricing table in react that other sites embed via <script>. my tailwind styles keep breaking when i put the component in shadow dom", "should_trigger": true},
+  {"query": "scaffold a feedback button that sites paste onto their page — floats bottom-right, opens a little form", "should_trigger": true},
+  {"query": "how do i build a drop-in reviews widget that i publish to npm and people load from unpkg with a script tag?", "should_trigger": true},
+  {"query": "we already have a widget in examples/ using defineWidget and embed.ts, i want to add a new booking widget alongside it", "should_trigger": true},
+  {"query": "my tailwind v4 classes render completely unstyled inside the shadow root of my embeddable component, whats going on", "should_trigger": true},
+  {"query": "i want customers to call something like widget('open') and pass their api key as config before my async script has even finished loading, kind of like the intercom snippet", "should_trigger": true},
+  {"query": "turn this react component into something i can embed on a customer's wordpress site with just a single script tag", "should_trigger": true},
+  {"query": "add a floating launcher mode so people just paste the script and it injects itself into the page, no element tag to place", "should_trigger": true},
+  {"query": "build a newsletter signup box that any blog can embed, with config passed via data attributes on the element", "should_trigger": true},
+  {"query": "build me a dashboard in next.js to show our internal sales metrics by region, pulling from our postgres db", "should_trigger": false},
+  {"query": "i need a reusable Button and Card component for our design system that we publish to npm for our other apps to install", "should_trigger": false},
+  {"query": "how do i embed a youtube video and an iframe of our booking app into a partner's landing page", "should_trigger": false},
+  {"query": "our next.js marketing site needs server-side rendering on the blog pages for SEO, how do i set that up", "should_trigger": false},
+  {"query": "help me install and configure the Intercom messenger on our marketing site", "should_trigger": false},
+  {"query": "create a chrome extension that injects a summarize button into the gmail toolbar", "should_trigger": false},
+  {"query": "i want to add a live chat panel to the dashboard page of my own saas react app", "should_trigger": false},
+  {"query": "set up github actions to publish my node cli tool to npm on every tagged release", "should_trigger": false},
+  {"query": "my react component's tailwind colors aren't applying, i think my content config is wrong", "should_trigger": false},
+  {"query": "set up a bun workspaces monorepo with shared tsconfig for our backend packages", "should_trigger": false}
+]

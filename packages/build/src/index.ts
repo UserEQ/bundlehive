@@ -33,7 +33,7 @@ export interface WidgetBuildOptions {
  *
  * ```ts
  * import { defineConfig } from "vite";
- * import { widgetBuildConfig } from "@bundlehive/build";
+ * import { widgetBuildConfig } from "@usereq/bundlehive-build";
  * export default defineConfig(widgetBuildConfig({ name: "AcmeWidget" }));
  * ```
  *

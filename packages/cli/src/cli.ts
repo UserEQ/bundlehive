@@ -1,5 +1,5 @@
-#!/usr/bin/env bun
-import { widgetBuildConfig, type WidgetBuildOptions } from "@bundlehive/build";
+#!/usr/bin/env node
+import { widgetBuildConfig, type WidgetBuildOptions } from "@usereq/bundlehive-build";
 
 /**
  * The `bundlehive` CLI. Wraps Vite with the widget build preset so authors

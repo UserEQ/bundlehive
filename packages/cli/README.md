@@ -1,11 +1,11 @@
-# @bundlehive/cli
+# @usereq/bundlehive-cli
 
 The `bundlehive` command — dev server and build for
 [BundleHive](https://github.com/nguyenduy/bundlehive) embeddable widgets. No
 `vite.config.ts` required; it applies the widget build preset internally.
 
 ```bash
-npm install -D @bundlehive/cli
+npm install -D @usereq/bundlehive-cli
 ```
 
 ## Commands
@@ -37,7 +37,7 @@ bundlehive build    # Build the embed bundle (IIFE + ESM) into dist/
 ```
 
 Outputs `dist/embed.js` (IIFE, for `<script>`/CDN) and `dist/embed.mjs` (ESM, for
-npm consumers). Pairs with [`@bundlehive/react`](https://www.npmjs.com/package/@bundlehive/react).
+npm consumers). Pairs with [`@usereq/bundlehive`](https://www.npmjs.com/package/@usereq/bundlehive).
 
 ## License
 
