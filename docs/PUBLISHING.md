@@ -168,14 +168,16 @@ Secrets/permissions it needs:
 - `NPM_TOKEN` secret (above).
 - `contents: write` + `pull-requests: write` (open the version PR / push tags).
 
-> **npm provenance is disabled** in `release.yml` because the repo is **private**.
-> npm rejects provenance bundles from private source repos
-> (`E422 … Unsupported GitHub Actions source repository visibility: "private"`).
-> Provenance (`NPM_CONFIG_PROVENANCE: "true"` + `id-token: write`) cryptographically
-> links each published tarball to this repo + commit — a nice supply-chain signal.
-> To turn it on later, **make the repo public**, then uncomment the
-> `id-token: write` permission and the `NPM_CONFIG_PROVENANCE` env line in
-> `release.yml` (both are left in place, commented, for exactly this).
+- `id-token: write` for **npm provenance** (`NPM_CONFIG_PROVENANCE: "true"`), which
+  cryptographically links each published tarball to this repo + commit — a
+  supply-chain trust signal. Requires a **public repo** and npm CLI ≥ 9.5; both
+  are enabled in `release.yml`.
+
+> **History:** provenance was briefly disabled while `UserEQ/bundlehive` was
+> private (npm rejects provenance from private repos with
+> `E422 … Unsupported GitHub Actions source repository visibility: "private"`).
+> The repo is now public, so it's back on. The initial `0.1.0` publish went out
+> **without** provenance; releases from the next version onward carry it.
 
 ---
 

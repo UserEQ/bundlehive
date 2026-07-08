@@ -17,6 +17,13 @@ jobs:
       - run: bun install --frozen-lockfile
       - name: Build packages
         run: bun run build # examples typecheck/build against the built dist
+      - name: Link workspace bins
+        # The `bundlehive` CLI bin points at packages/cli/dist/cli.js, which does
+        # not exist at the first install. On Linux, bun skips linking a bin whose
+        # target is missing (macOS creates a dangling symlink that later resolves,
+        # which is why this only bites in CI). Re-installing now that dist exists
+        # links the bin so the example `bundlehive build` scripts resolve.
+        run: bun install --frozen-lockfile
       - name: Typecheck
         run: bun --filter '*' typecheck
       - name: Build examples
