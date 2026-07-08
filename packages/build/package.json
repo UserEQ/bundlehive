@@ -1,6 +1,6 @@
 {
   "name": "@usereq/bundlehive-build",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Vite build preset for BundleHive widgets — lib mode (IIFE + ESM), Tailwind, shadow-DOM-friendly defaults.",
   "type": "module",
   "license": "MIT",
@@ -14,7 +14,9 @@
       "default": "./dist/index.js"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
     "prepublishOnly": "tsup",

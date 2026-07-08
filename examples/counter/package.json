@@ -8,7 +8,9 @@
   "browser": "./dist/embed.js",
   "main": "./dist/embed.js",
   "module": "./dist/embed.mjs",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "bundlehive dev",
     "build": "bundlehive build --name BhCounter",
