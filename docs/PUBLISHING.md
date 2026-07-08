@@ -92,13 +92,24 @@ export default defineConfig({
 Add a root `"build"` script that builds all packages, e.g.
 `"build": "bun --filter './packages/*' build"`.
 
-### 3. Version bumping & `workspace:*`
+### 3. Internal dependencies must use a real semver range (NOT `workspace:*`)
 
-`@usereq/bundlehive-cli` depends on `@usereq/bundlehive-build` via `workspace:*`. npm doesn't
-understand that protocol — it must become a real range (`^0.1.0`) at publish
-time. **Changesets handles this automatically** (recommended below); `bun publish`
-also rewrites `workspace:*`. Don't publish with plain `npm publish` from the
-workspace without one of these.
+`@usereq/bundlehive-cli` depends on `@usereq/bundlehive-build`. **Declare that
+dependency with a real range (`^0.1.0`), not `workspace:*`.**
+
+> ⚠️ **Learned the hard way (0.1.0):** the common advice that "Changesets / `bun
+> publish` rewrites `workspace:*` at publish time" did **not** hold for our
+> `changeset publish` + bun-workspaces path — `0.1.0` shipped the literal
+> `"@usereq/bundlehive-build": "workspace:*"`, and every consumer `install`
+> failed because the `workspace:` protocol only resolves inside this monorepo.
+> Fixed in `0.1.1` by pinning `^0.1.0` in `packages/cli/package.json`.
+
+A plain range is strictly better here: **bun still links the local workspace
+package** during framework development whenever its version satisfies the range,
+so local dev is unchanged — and the published tarball carries a range consumers
+can actually resolve. Changesets bumps this range along with the fixed group on
+each release (e.g. `^0.1.0` → `^0.1.1`). Private, unpublished packages (the
+`examples/*`) may keep `workspace:*` freely — they're never packed.
 
 ### 4. npm scope + token
 

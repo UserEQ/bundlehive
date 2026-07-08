@@ -16,7 +16,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@usereq/bundlehive-build": "workspace:*",
+    "@usereq/bundlehive-build": "^0.1.0",
     "vite": "^8.0.3"
   },
   "devDependencies": {
