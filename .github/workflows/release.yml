@@ -23,7 +23,8 @@ jobs:
     permissions:
       contents: write # push version-bump commits / tags
       pull-requests: write # open the "Version Packages" PR
-      id-token: write # npm provenance (OIDC)
+      # id-token: write  # only needed for npm provenance — re-add if the repo
+      # is made public and NPM_CONFIG_PROVENANCE is re-enabled below.
     steps:
       - uses: actions/checkout@v4
 
@@ -45,5 +46,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          # Cryptographically link published tarballs to this repo + commit.
-          NPM_CONFIG_PROVENANCE: "true"
+          # Provenance is disabled while the repo is private — npm rejects
+          # provenance bundles from private source repos. To re-enable: make the
+          # repo public, uncomment `id-token: write` above and the line below.
+          # NPM_CONFIG_PROVENANCE: "true"

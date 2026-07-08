@@ -167,9 +167,15 @@ merged and versions are bumped).
 Secrets/permissions it needs:
 - `NPM_TOKEN` secret (above).
 - `contents: write` + `pull-requests: write` (open the version PR / push tags).
-- `id-token: write` for **npm provenance** (`NPM_CONFIG_PROVENANCE`), which
-  cryptographically links the published package to this repo + commit. Requires
-  a public repo and npm CLI ≥ 9.5.
+
+> **npm provenance is disabled** in `release.yml` because the repo is **private**.
+> npm rejects provenance bundles from private source repos
+> (`E422 … Unsupported GitHub Actions source repository visibility: "private"`).
+> Provenance (`NPM_CONFIG_PROVENANCE: "true"` + `id-token: write`) cryptographically
+> links each published tarball to this repo + commit — a nice supply-chain signal.
+> To turn it on later, **make the repo public**, then uncomment the
+> `id-token: write` permission and the `NPM_CONFIG_PROVENANCE` env line in
+> `release.yml` (both are left in place, commented, for exactly this).
 
 ---
 

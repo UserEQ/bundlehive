@@ -5,9 +5,11 @@
   "type": "module",
   "license": "MIT",
   "bin": {
-    "bundlehive": "./dist/cli.js"
+    "bundlehive": "dist/cli.js"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
     "prepublishOnly": "tsup",
