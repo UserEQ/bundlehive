@@ -4,6 +4,13 @@
   "description": "Author standalone, embeddable React components — they mount as Shadow-DOM custom elements with isolated CSS.",
   "type": "module",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UserEQ/bundlehive.git",
+    "directory": "packages/react"
+  },
+  "homepage": "https://github.com/UserEQ/bundlehive#readme",
+  "bugs": "https://github.com/UserEQ/bundlehive/issues",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",

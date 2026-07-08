@@ -184,11 +184,24 @@ Secrets/permissions it needs:
   supply-chain trust signal. Requires a **public repo** and npm CLI ≥ 9.5; both
   are enabled in `release.yml`.
 
+> **Provenance requires a `repository` field.** Every published `package.json`
+> must declare a `repository` whose URL matches the repo, or provenance fails
+> with `E422 … "repository.url" is "", expected to match "https://github.com/UserEQ/bundlehive"`.
+> All three packages set:
+> ```jsonc
+> "repository": {
+>   "type": "git",
+>   "url": "git+https://github.com/UserEQ/bundlehive.git",
+>   "directory": "packages/<name>"   // monorepo subpath
+> }
+> ```
+
 > **History:** provenance was briefly disabled while `UserEQ/bundlehive` was
 > private (npm rejects provenance from private repos with
 > `E422 … Unsupported GitHub Actions source repository visibility: "private"`).
-> The repo is now public, so it's back on. The initial `0.1.0` publish went out
-> **without** provenance; releases from the next version onward carry it.
+> Re-enabled once public. Then `0.1.1` first failed provenance for a missing
+> `repository` field (added in all three package.jsons). The initial `0.1.0`
+> publish went out **without** provenance; `0.1.1`+ carry it.
 
 ---
 
