@@ -1,6 +1,6 @@
 {
   "name": "@usereq/bundlehive-cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The `bundlehive` CLI — dev server and build for embeddable widgets.",
   "type": "module",
   "license": "MIT",
@@ -16,7 +16,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@usereq/bundlehive-build": "^0.1.0",
+    "@usereq/bundlehive-build": "^0.1.1",
     "vite": "^8.0.3"
   },
   "devDependencies": {
